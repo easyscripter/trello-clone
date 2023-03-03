@@ -4,6 +4,7 @@ import { ColumnContainer } from "./ColumnContainer";
 import { ColumnTitle } from "./ColumnTitle";
 import { AddItemButton } from "./AddItemButton";
 import {NewItemFormButton, NewItemFormInput, NewItemFormContainer} from "./NewItemForm";
+import {CustomDragLayerContainer} from "./CustomDragLayerContainer";
 
 export {
     AppContainer,
@@ -13,5 +14,6 @@ export {
     AddItemButton,
     NewItemFormButton,
     NewItemFormInput,
-    NewItemFormContainer
+    NewItemFormContainer,
+    CustomDragLayerContainer
 }

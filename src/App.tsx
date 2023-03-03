@@ -1,8 +1,8 @@
 import React from 'react';
 import {
-  AppContainer,
+    AppContainer,
 } from "./styles/Components";
-import {Card, Column} from "./Components";
+import {Card, Column, CustomDragLayer} from "./Components";
 import {AddNewItem} from "./Components/AddNewItem";
 import {useDispatch, useSelector} from "react-redux";
 import type {RootState} from './store/store';
@@ -18,14 +18,22 @@ const App = () => {
 
   return (
     <AppContainer>
-        {lists.map((list) => (
+        <CustomDragLayer/>
+        {lists.map((list, index) => (
             <Column
                 title={list.title}
                 id={list.id}
+                index={index}
                 key={list.id}
             >
-                {list.tasks.map((task) => (
-                    <Card text={task.text} key={task.id}/>
+                {list.tasks.map((task, index) => (
+                    <Card
+                        id={task.id}
+                        text={task.text}
+                        key={task.id}
+                        index={index}
+                        columnId={list.id}
+                    />
                 ))}
             </Column>
         ))}
